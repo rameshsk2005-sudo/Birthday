@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #1a1a40, #3a0ca3);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+input {
+  padding: 12px;
+  width: 280px;
+  margin: 8px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #ff9800;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#particle-container,
+#balloon-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  animation: floatUp linear infinite;
+  opacity: 0.8;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  animation: riseBalloons linear infinite;
+}
+
+@keyframes floatUp {
+  0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+}
+
+@keyframes riseBalloons {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-110vh); opacity: 0; }
+}

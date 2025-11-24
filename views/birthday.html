@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Happy Birthday</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<h1 id="wish"></h1>
+
+<img id="photo" width="300" style="border-radius:15px; margin-top:20px;">
+
+<div id="particle-container"></div>
+<div id="balloon-container"></div>
+
+<script src="/animations.js"></script>
+
+<script>
+// Get the name and image path from URL
+const params = new URLSearchParams(window.location.search);
+const name = params.get("name");
+const imagePath = params.get("image");
+
+// Set birthday wish
+document.getElementById("wish").innerText =
+  "🎉 Cheers to another year of laughter, memories, and endless friendship! Happy Birthday 💛🥳 , " + name + " 🎉";
+
+// Set image from /uploads folder
+document.getElementById("photo").src = imagePath;
+</script>
+
+</body>
+</html>
