@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: birthday-wish-app
+    env: python
+    region: oregon   # or singapore, frankfurt — choose any
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+
+    envVars:
+      - key: MONGODB_URL
+        value: "mongodb+srv://rameshsk2005_db_user:h8lzRlIEyavIndyW@cluster0.36frcmx.mongodb.net/?appName=Cluster0"
